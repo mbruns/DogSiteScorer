@@ -1,0 +1,12 @@
+<h1>DoGSiteScorer</h1>
+  <h6> Startseite</h6>
+    <p> irgendwie muss hier eine bessere aufteilung hin, links fehlen die links.</p>
+    <p> Anfrage: </p>
+     <%= form_tag("/id", :method => "get") do %>
+       <%= text_field_tag(:ID, "hier die PDB-ID reinschreiben!") %>
+       <%= submit_tag("los gehts") %>
+     <% end %>
+    <p>
+        neue view home#id <br>
+        in routes.rb "/id" auf "home#id" gematcht <br>
+    </p>

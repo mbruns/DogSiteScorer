@@ -1,0 +1,20 @@
+<p> 
+  <%=params[:ID]%> wird aus der PDB runtergeladen<br>
+</p>
+
+<p>
+  wenn Du das ergebnis als email bekommen willst, gib deine adresse ein:<br>
+  <%= form_tag("/mail", :method => "get") do %>
+       <%= text_field_tag(:mail, "Deine e-mail adresse") %>
+       <%= submit_tag("ergebnis als email erhalten!") %>
+     <% end %>
+   <br>
+     oder möchtest Du lieber hier warten?
+  <%= form_tag("/wait", :method => "get") do %>
+       <%= submit_tag("warten!") %>
+     <% end %>
+</p>
+<p>
+  ich matche den /mail Pfad auf home#mail<br>
+  und den /wait Pfad auf home#wait
+</p>
