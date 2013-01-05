@@ -1,11 +1,15 @@
 DoGSiteScorer::Application.routes.draw do
 
-
+  resources :sessions, :only => [:new, :create, :destroy]
 
   get "home/index"
   match "/id", :to => 'home#id'
   match "/mail", :to =>'home#mail'
   match "/wait", :to =>'home#wait'
+  match '/session/new', :to => 'sessions#new'
+  match '/session/create', :to => 'sessions#create'
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

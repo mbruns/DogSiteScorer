@@ -2,6 +2,22 @@
 <p>Find me in app/views/sessions/new.html.erb</p>
 
 <p> willst Du eine neue Abfrage erstellen, dann ist das hier deine Seite:<br>
-neue session:<br>
-</p>
+neue session:<br></p>
+
+
+<%= form_for(:session, :url => sessions_path) do |f| %>
+<div class="field">
+<%= f.label :session %><br />
+<%= f.text_field :session %>
+</div>
+
+<div class="actions">
+<%= f.submit "start!" %>
+</div>
+<% end %>
+
+
+
+
+
 

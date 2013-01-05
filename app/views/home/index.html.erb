@@ -10,3 +10,8 @@
         neue view home#id <br>
         in routes.rb "/id" auf "home#id" gematcht <br>
     </p>
+    <h5>neuer versuch: sessions!</h5>
+    <p>willst du eine neue session?</p>
+    <%= form_tag("/sessions/new", :method => "get") do %>
+      <%= submit_tag("JAA!") %>
+    <% end %>
