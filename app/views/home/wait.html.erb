@@ -1,7 +1,14 @@
 <p>
   Ihre Anfrage nach <%=@id%> wird bearbeitet. <br>
   sobald sie fertig ist, werden Sie weitergeleitet!<br>
-  und zwar auf Seite <%=@session%>
+  und zwar auf Seite <%=@session%>. <br>
+  das ist die Session-ID, und es macht glaub ich nicht so viel Sinn, zu versuchen, damit eine anfrage-ergebnis-seite herzustellen.<br>
+  vielleicht sollten wir hie ein model machen, für die verschiedenen requests? <br>
+  im model ist jetzt die anfrage gespeichert, unter der id: <%=@request%> <br>
+  <br>
+  so, wo ist jetzt die antwort?<br>
+  <%= link_to "hier", request_path(@request) %>
+
 </p>
 
 

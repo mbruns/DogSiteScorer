@@ -8,12 +8,8 @@
 #  updated_at :datetime
 #
 
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+require 'spec_helper'
 
-one:
-  pdb: MyString
-  email: MyString
-
-two:
-  pdb: MyString
-  email: MyString
+describe Request do
+  pending "add some examples to (or delete) #{__FILE__}"
+end

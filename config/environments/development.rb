@@ -23,6 +23,9 @@ DoGSiteScorer::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+  
+  #hinzugefügt, um in der mailer-view einen gültigen link zum ergebnis zu bekommen:
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {

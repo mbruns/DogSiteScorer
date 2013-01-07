@@ -8,12 +8,6 @@
 #  updated_at :datetime
 #
 
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  pdb: MyString
-  email: MyString
-
-two:
-  pdb: MyString
-  email: MyString
+class Request < ActiveRecord::Base
+  attr_accessible :pdb
+end

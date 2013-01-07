@@ -1,5 +1,9 @@
 DoGSiteScorer::Application.routes.draw do
 
+  #get "requests/new"
+  resources :requests
+
+
   resources :sessions, :only => [:new, :create, :destroy]
 
   get "home/index"
