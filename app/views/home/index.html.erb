@@ -1,6 +1,7 @@
 <h1>DoGSiteScorer</h1>
   <h6> Startseite</h6>
     <p> irgendwie muss hier eine bessere aufteilung hin, links fehlen die links.</p>
+    <h4><%= flash[:notice] %></h4>
     <p> Anfrage: </p>
      <%= form_tag("/id", :method => "get") do %>
        <%= text_field_tag(:ID, "hier die PDB-ID reinschreiben!") %>

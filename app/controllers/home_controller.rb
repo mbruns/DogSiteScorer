@@ -5,17 +5,34 @@ class HomeController < ApplicationController
   end
 
   def id
+    #test, ob PDB_ID angegeben wurde
+    if params[:ID].empty?
+      flash[:notice] = "Du musst eine PDB-ID eingeben!"
+      redirect_to :action => 'index'
+    end
+    #variablen füllen, request in Datenbank speichern
     @id = params[:ID]
     session[:ID] = @id.to_param
     @request = Request.create(:pdb => @id)
     session[:request] = @request.id
-  #download PDB file
-    Net::HTTP.start("www.rcsb.org") { |http|
-      resp = http.get("/pdb/files/#{@id}.pdb")
-      File.open("tmp/cache/#{@id}", "wb") { |file|
-        file.write(resp.body)
+
+    #download PDB file
+    #noch nicht vorhanden? -> runterladen 
+    if not File.exists?("tmp/cache/#{@id}") then
+      Net::HTTP.start("www.rcsb.org") { |http|
+        resp = http.get("/pdb/files/#{@id}.pdb")
+        #existiert -> in Datei schreiben
+        if resp.is_a?(Net::HTTPSuccess) then
+          File.open("tmp/cache/#{@id}", "wb") { |file|
+            file.write(resp.body)}
+        #existiert nicht -> zurück zur Startseite
+        else
+        flash[:notice] = "diese PDB-ID gibts nicht. Versuchs noch mal!"
+        redirect_to :action => 'index'
+        end
       }
-    }
+    end
+    
   end
 
   def wait
