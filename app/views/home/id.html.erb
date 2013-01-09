@@ -5,7 +5,7 @@
 <p>
   wenn Du das ergebnis als email bekommen willst, gib deine adresse ein:<br>
   <%= form_tag("/wait", :method => "get") do %>
-       <%= text_field_tag(:mail, "Deine e-mail adresse") %>
+       <%= text_field_tag(:mail, nil, :placeholder => "Deine e-mail adresse") %>
        <%= submit_tag("los gehts") %>
      <% end %>
 </p>
