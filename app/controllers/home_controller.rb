@@ -36,12 +36,17 @@ class HomeController < ApplicationController
   end
 
   def wait
-    @address = params[:mail]
+    #als mail verschicken?
+    if not params[:mail].empty?      
+      @address = params[:mail]
+    end
+    #variablen füllen
     @id = session[:ID]
     @session = session[:session_id]
     @request = session[:request]
     @info = "weil Du keine adresse angegeben hast, musst Du leider warten!"
-    if @address != nil
+    #mail senden
+    if @address
       @info = "wir schicken auch eine mail an #{@address}"
       message = RequestMailer.request_mail(@address, @id, @request)
       message.deliver
