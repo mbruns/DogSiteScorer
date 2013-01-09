@@ -18,18 +18,17 @@ class HomeController < ApplicationController
     }
   end
 
-  def mail
-    @address = params[:mail]
-    @id = session[:ID]
-    @request = session[:request]
-    message = RequestMailer.request_mail(@address, @id, @request)
-    message.deliver
-  end
-  
   def wait
+    @address = params[:mail]
     @id = session[:ID]
     @session = session[:session_id]
     @request = session[:request]
+    @info = "weil Du keine adresse angegeben hast, musst Du leider warten!"
+    if @address != nil
+      @info = "wir schicken auch eine mail an #{@address}"
+      message = RequestMailer.request_mail(@address, @id, @request)
+      message.deliver
+    end
   end
 
 end

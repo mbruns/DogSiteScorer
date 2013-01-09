@@ -6,7 +6,6 @@ class RequestsController < ApplicationController
     @ready = true
     if @ready == true
       render :text => File.read("/home/meike/DoGSiteScorer/tmp/cache/#{@request.pdb}")
-      @request.destroy
     end
   end
 

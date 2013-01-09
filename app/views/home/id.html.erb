@@ -4,7 +4,7 @@
 
 <p>
   wenn Du das ergebnis als email bekommen willst, gib deine adresse ein:<br>
-  <%= form_tag("/mail", :method => "get") do %>
+  <%= form_tag("/wait", :method => "get") do %>
        <%= text_field_tag(:mail, "Deine e-mail adresse") %>
        <%= submit_tag("ergebnis als email erhalten!") %>
      <% end %>
