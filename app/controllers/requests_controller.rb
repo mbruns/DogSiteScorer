@@ -3,10 +3,11 @@ class RequestsController < ApplicationController
   def show
     @request = Request.find(params[:id])
     #@file = "/home/meike/DoGSiteScorer/tmp/cache/#{@request.pdb}"
-    @ready = true
+    @ready = false
     if @ready == true
-      render :text => File.read("/home/meike/DoGSiteScorer/tmp/cache/#{@request.pdb}")
+      render :text => "<pre>#{File.read("/home/meike/DoGSiteScorer/tmp/cache/#{@request.pdb}")}</pre>"
     end
+ 
   end
 
 end
