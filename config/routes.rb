@@ -12,6 +12,7 @@ DoGSiteScorer::Application.routes.draw do
   match "/wait", :to =>'home#wait'
   match '/session/new', :to => 'sessions#new'
   match '/session/create', :to => 'sessions#create'
+  match '/work', :to => 'home#work'
 
 
 

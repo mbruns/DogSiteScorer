@@ -37,24 +37,37 @@ class HomeController < ApplicationController
 
   def wait
   
-    #als mail verschicken?
-    if not params[:mail].empty?      
-      @address = params[:mail]
-    end
-    
     #variablen füllen
     @id = session[:ID]
     @session = session[:session_id]
     @request = session[:request]
     @info = "weil Du keine adresse angegeben hast, musst Du leider warten!"
-    #eingabe ins tool/warten, bis das tool fertig ist
-    
-    #mail senden
-    if @address
+
+    #als mail verschicken?
+    if not params[:mail].empty?      
+      @address = params[:mail]
       @info = "wir schicken auch eine mail an #{@address}"
-      message = RequestMailer.request_mail(@address, @id, @request)
-      message.deliver
     end
-  end
+   
+
+    #eingabe ins tool/warten, bis das tool fertig ist
+    @ready = false
+    system ("ruby ../HiWi/sleep.rb")
+    if $?.exitstatus == 0 then
+    @ready = true
+    end
+    
+    #eingabe korrekt verarbeitet?
+    
+    if @ready == true then 
+      #mail senden
+      if @address
+        message = RequestMailer.request_mail(@address, @id, @request)
+        message.deliver
+      end
+      redirect_to :action=>"show", :id=>"#{@request}", :controller=>"requests"
+    end
+
+  end 
 
 end
