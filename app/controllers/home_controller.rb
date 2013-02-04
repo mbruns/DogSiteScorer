@@ -1,15 +1,18 @@
 require 'net/http'
 
 class HomeController < ApplicationController
+
   def index
   end
 
   def id
+  
     #test, ob PDB_ID angegeben wurde
     if params[:ID].empty?
       flash[:notice] = "Du musst eine PDB-ID eingeben!"
       redirect_to :action => 'index'
     end
+    
     #variablen füllen, request in Datenbank speichern
     @id = params[:ID]
     session[:ID] = @id.to_param
@@ -42,32 +45,41 @@ class HomeController < ApplicationController
     @session = session[:session_id]
     @request = session[:request]
     @info = "weil Du keine adresse angegeben hast, musst Du leider warten!"
+#    @ready = false
 
     #als mail verschicken?
     if not params[:mail].empty?      
       @address = params[:mail]
       @info = "wir schicken auch eine mail an #{@address}"
-    end
-   
-
-    #eingabe ins tool/warten, bis das tool fertig ist
-    @ready = false
-    system ("ruby ../HiWi/sleep.rb")
-    if $?.exitstatus == 0 then
-    @ready = true
-    end
-    
-    #eingabe korrekt verarbeitet?
-    
-    if @ready == true then 
-      #mail senden
-      if @address
-        message = RequestMailer.request_mail(@address, @id, @request)
-        message.deliver
-      end
-      redirect_to :action=>"show", :id=>"#{@request}", :controller=>"requests"
+      session[:mail] = @address
     end
 
+    #tool aufrufen
+    fork do
+      system ("ruby lib/tasks/sleep.rb #{@id}")
+#      @ready = true
+    end
+
+#    if $?.exitstatus != 0 then
+#      flash.now[:alert] = 'Problem im tool. geh dich irgendwo beschweren!'
+#    end
+
+
+    
   end 
+  
+  def results
+    @id = session[:ID]
+    @request = session[:request]
+    @address = session[:mail]
+    
+    #mail senden
+    if @address
+      message = RequestMailer.request_mail(@address, @id, @request)
+      message.deliver
+    end
+    
+    redirect_to :action=>"show", :id=>"#{@request}", :controller=>"requests"
+  end
 
 end

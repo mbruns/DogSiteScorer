@@ -1,12 +1,17 @@
 <p> 
-  <%=params[:ID]%> wird aus der PDB runtergeladen<br>
+  <%=params[:ID]%> wurde aus der PDB runtergeladen<br>
+</p>
+
+<p>
+eventuell brauchen wir noch ein paar mehr parameter...<br>
+willst Du die berechnung starten?
 </p>
 
 <p>
   wenn Du das ergebnis als email bekommen willst, gib deine adresse ein:<br>
   <%= form_tag("/wait", :method => "get") do %>
        <%= text_field_tag(:mail, nil, :placeholder => "Deine e-mail adresse") %>
-       <%= submit_tag("los gehts") %>
+       <%= submit_tag("berechnung starten") %>
      <% end %>
 </p>
 <p>
