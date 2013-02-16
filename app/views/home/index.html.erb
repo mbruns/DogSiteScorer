@@ -3,8 +3,12 @@
     <p> irgendwie muss hier eine bessere aufteilung hin, links fehlen die links.</p>
     <h4><%= flash[:notice] %></h4>
     <p> Anfrage: </p>
-     <%= form_tag("/id", :method => "get") do %>
+     <%= form_tag("/id", :method => "post", :multipart => true) do %>
+      <p> eine Id eingeben und aus der PDB runterladen:</p>
        <%= text_field_tag(:ID, nil, :placeholder => "hier die PDB-ID reinschreiben!") %>
+       <p>oder eine pdb-datei hochladen:</p>
+         <%= file_field_tag "upload"%>
+       <p> berechnung starten? </p>
        <%= submit_tag("los gehts") %>
      <% end %>
 

@@ -1,19 +1,47 @@
 <p> 
   <%=params[:ID]%> wurde aus der PDB runtergeladen<br>
+  der bearbeitungscode ist jetzt <%=@request.pdb%>
 </p>
 
-<p>
-eventuell brauchen wir noch ein paar mehr parameter...<br>
-willst Du die berechnung starten?
-</p>
+<p> teste den astex-viewer:</p>
+<applet
+  width="640" height="480" name="av"
+  code="MoleculeViewerApplet"
+  codebase="lib/tasks"
+  archive="OpenAstexViewer.jar">
+      <param name="scriptFile" value="621p.script">
+</applet>
 
 <p>
+eventuell brauchen wir noch ein paar mehr parameter...
+</p>
+
+<%= form_tag("/wait", :method => "get") do %>
+  <p>
+  select chains
+         <%= radio_button_tag(:chain, "0", "ALL") %>
+         <%= label_tag(:chain, "ALL") %>
+         <% @chains.each do |c| %>
+           <%= radio_button_tag(:chain, "#{c}") %>
+           <%= label_tag(:chain, "#{c}") %>
+         <% end %>
+  </p>
+  
+  <p>
+  select binding site prediction granularity
+    <%= radio_button_tag(:granularity, "0", "Pockets") %>
+    <%= label_tag(:granularity, "Pockets") %>
+    <%= radio_button_tag(:granularity, "1", "Pockets and Subpockets") %>
+    <%= label_tag(:granularity, "Pockets and Subpockets") %>
+ </p>
+
+  <p>
   wenn Du das ergebnis als email bekommen willst, gib deine adresse ein:<br>
-  <%= form_tag("/wait", :method => "get") do %>
        <%= text_field_tag(:mail, nil, :placeholder => "Deine e-mail adresse") %>
-       <%= submit_tag("berechnung starten") %>
-     <% end %>
-</p>
+  </p>
+  
+  <%= submit_tag("berechnung starten") %>
+<% end %>
 <p>
   <%=@info%>
 </p>

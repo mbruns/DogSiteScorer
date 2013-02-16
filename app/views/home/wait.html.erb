@@ -1,5 +1,5 @@
 
-<%if File.exists?("tmp/cache/yeah") %>
+<%if File.exists?("results/results_3DFR_1346059454_P0.html") %>
   <script>
     window.location.href = "http://localhost:3000/results"
   </script>
@@ -13,6 +13,13 @@
   <%=@info%>
   <br>
   im model ist jetzt die anfrage gespeichert, unter der id: <%=@request%> <br>
+</p>
+
+
+<p>
+gesammelte parameter: <br>
+chains: <%= @chain %> <br>
+granularity: <%= @pocLev %>
 </p>
 
 
