@@ -68,9 +68,7 @@ class HomeController < ApplicationController
           break
         end
       end
-      @chains.keep_if {|v| v =~ /[A-Z]/}
-
-    
+      @chains.keep_if {|v| v =~ /[A-Z]/}    
   end
 
   def wait

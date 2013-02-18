@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <!-- 
+  ZBH Zentrum fuer Bioinformatik Hamburg
+This website is powered by TYPO3 - inspiring people to share!
+TYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.
+  TYPO3 is copyright 1998-2010 of Kasper Skaarhoj. Extensions are copyright of their respective owners.
+  Information and contribution at http://typo3.com/ and http://typo3.org/
+ -->
+ <meta name="generator" content="TYPO3 4.4 CMS" />
+<title>DoGSiteScorer: Active Site Prediction and Analysis Server</title><link rel="stylesheet" type="text/css" href="http://www.zbh.uni-hamburg.de/uploads/tf/zbh.css" />
+<script src="../jmol/jmol-12.0.49/Jmol.js"></script>
+ <script type="text/javascript" src="../jquery/jquery-1.7.2.min.js"></script>
+ <script type="text/javascript" src="../jquery/jquery.tablesorter.js"></script>
+  <script type = "text/javascript">
+  $(document).ready(function() 
+   { 
+       $("#pocTable").tablesorter(); 
+       $("#spocTable").tablesorter(); 
+   } 
+ ); </script>
+<link rel="stylesheet" type="text/css" href="../jquery/sortTable.css" />
+ </head>
+ <body>
+<div id="header">
+  <a href="http://www.zbh.uni-hamburg.de/en/home.html" ><img src="http://www.zbh.uni-hamburg.de/uploads/tf/zbh_logo_en.png" width="282" height="72" id="zbh_logo" alt="" title="" /></a><a href="http://www.uni-hamburg.de"><img src="http://www.zbh.uni-hamburg.de/uploads/tf/uhh_2010.png" width="300" height="120" id="uhh_logo" alt="" title="" /></a>
+ </div>
+<div id="navigation">
+  <span class="navigation">      <a href="http://www.uni-hamburg.de">UHH</a>
+     <strong>&gt;</strong>&nbsp;<a href="http://www.zbh.uni-hamburg.de">Center for Bioinformatics</a>
+     <strong>&gt;</strong>&nbsp;Servers
+     <strong>&gt;</strong>&nbsp;DoGSiteScorer: Active Site Prediction and Analysis Server</span>
+</div>
+<table id="content-container">
+<tr>
+  <td id="menu">
+  <!--###MENU###--><div class="menu-no"><a href="http://www.zbh.uni-hamburg.de/en/home.html" onfocus="blurLink(this);"  >Home</a>
+  </div><div class="menu-no"><a href="http://www.zbh.uni-hamburg.de/en/staff.html" onfocus="blurLink(this);"  >Staff</a>
+  </div><div class="menu-no"><a href="http://www.zbh.uni-hamburg.de/en/research.html" onfocus="blurLink(this);"  >Research</a>
+  </div><div class="menu-no"><a href="http://www.zbh.uni-hamburg.de/en/publications.html" onfocus="blurLink(this);"  >Publications</a>
+  </div><div class="menu-spc"></div><div class="menu-no"><a href="http://www.zbh.uni-hamburg.de/en/scientific-talks.html" onfocus="blurLink(this);"  >Scientific Talks</a>
+  </div><div class="menu-no"><a href="http://www.zbh.uni-hamburg.de/en/servers.html" onfocus="blurLink(this);"  >Servers</a>
+  </div><div class="menu-spc"></div><div class="menu-no"><a href="http://www.zbh.uni-hamburg.de/en/studying.html" onfocus="blurLink(this);"  >Studying</a>
+  </div><div class="menu-no"><a href="http://www.zbh.uni-hamburg.de/en/information-for-prospective-students.html" onfocus="blurLink(this);"  >Information for prospective students</a>
+  </div><div class="menu-spc"></div><div class="menu-no"><a href="http://www.zbh.uni-hamburg.de/en/jobs.html" onfocus="blurLink(this);"  >Jobs</a>
+  </div><div class="menu-no"><a href="http://www.zbh.uni-hamburg.de/en/documents.html" onfocus="blurLink(this);"  >Documents</a>
+  </div><div class="menu-no"><a href="http://www.zbh.uni-hamburg.de/en/alumni/home.html" onfocus="blurLink(this);"  >Alumni</a>
+  </div><!--###MENU###-->
+  </td>
+  <td id="content">
+    <table width="100%" border='3' frame='void'>
+    <h2>DoGSiteScorer: Active Site Prediction and Analysis Server</h2>
+    <tr>
+    <td align="center">
+      <font size="4"><br>Pockets and descriptors have been calculated for 4DFR:<br>
+<br><br>
+<table border='3' frame='void' id='pocTable' class='tablesorter'>
+<thead>
+<tr>
+<th align="center">       <font size="3" title=" P=Pocket, SP=subpocket, P[0-99]SP[0-99] ">Name </th>
+<th align="center">       <font size="3">Volume [&Aring;&sup3]</th>
+<th align="center">       <font size="3">Surface [&Aring;&sup2]</th>
+<th align="center">       <font size="3">Lipo surface [&Aring;&sup2] </th>
+<th align="center">       <font size="3">Depth [&Aring;] </th>
+<th align="center">       <font size="3">Simple Score </th>
+</tr>
+</thead>
+<tr>
+<td align="center" bgcolor="lightskyblue">      <font size="3"><a href="javascript: void(0)" onclick="window.open('results_4DFR_1346845200_P0.html', 'P0', 'width=600, height=600, left=200, top=200, scrollbars=yes, resizable=yes'); return false;">P0</a></td>
+<td align="center">       <font size="3"> 1376.13</td>
+<td align="center">       <font size="3"> 1427.53</td>
+<td align="center">       <font size="3"> 881.29</td>
+<td align="center">       <font size="3"> 26.31</td>
+<td align="center">       <font size="3"> 0.67</td>
+</tr>
+<tr>
+<td align="center" bgcolor="indianred">       <font size="3"><a href="javascript: void(0)" onclick="window.open('results_4DFR_1346845200_P1.html', 'P1', 'width=600, height=600, left=200, top=200, scrollbars=yes, resizable=yes'); return false;">P1</a></td>
+<td align="center">       <font size="3"> 1332.61</td>
+<td align="center">       <font size="3"> 1502.33</td>
+<td align="center">       <font size="3"> 1018.77</td>
+<td align="center">       <font size="3"> 25.38</td>
+<td align="center">       <font size="3"> 0.68</td>
+</tr>
+<tr>
+<td align="center" bgcolor="lightgreen">      <font size="3"><a href="javascript: void(0)" onclick="window.open('results_4DFR_1346845200_P2.html', 'P2', 'width=600, height=600, left=200, top=200, scrollbars=yes, resizable=yes'); return false;">P2</a></td>
+<td align="center">       <font size="3"> 349.70</td>
+<td align="center">       <font size="3"> 601.24</td>
+<td align="center">       <font size="3"> 335.44</td>
+<td align="center">       <font size="3"> 12.06</td>
+<td align="center">       <font size="3"> 0.23</td>
+</tr>
+<tr>
+<td align="center" bgcolor="orange">      <font size="3"><a href="javascript: void(0)" onclick="window.open('results_4DFR_1346845200_P3.html', 'P3', 'width=600, height=600, left=200, top=200, scrollbars=yes, resizable=yes'); return false;">P3</a></td>
+<td align="center">       <font size="3"> 210.88</td>
+<td align="center">       <font size="3"> 325.09</td>
+<td align="center">       <font size="3"> 193.78</td>
+<td align="center">       <font size="3"> 9.95</td>
+<td align="center">       <font size="3"> 0.06</td>
+</tr>
+<tr>
+<td align="center" bgcolor="gold">      <font size="3"><a href="javascript: void(0)" onclick="window.open('results_4DFR_1346845200_P4.html', 'P4', 'width=600, height=600, left=200, top=200, scrollbars=yes, resizable=yes'); return false;">P4</a></td>
+<td align="center">       <font size="3"> 128.00</td>
+<td align="center">       <font size="3"> 334.59</td>
+<td align="center">       <font size="3"> 227.02</td>
+<td align="center">       <font size="3"> 11.77</td>
+<td align="center">       <font size="3"> 0.00</td>
+</tr>
+<tr>
+<td align="center" bgcolor="violet">      <font size="3"><a href="javascript: void(0)" onclick="window.open('results_4DFR_1346845200_P5.html', 'P5', 'width=600, height=600, left=200, top=200, scrollbars=yes, resizable=yes'); return false;">P5</a></td>
+<td align="center">       <font size="3"> 103.87</td>
+<td align="center">       <font size="3"> 197.84</td>
+<td align="center">       <font size="3"> 134.89</td>
+<td align="center">       <font size="3"> 6.46</td>
+<td align="center">       <font size="3"> 0.00</td>
+</tr>
+</table>
+<font size="1"> Clicking on the name of a single pocket opens a separate window <br> containing further calculated pocket properties.<br>
+    </td>
+    <td>
+      <p align="center"><br><br><br>
+      <script>
+      jmolInitialize("../jmol/jmol-12.0.49/");
+      jmolSetAppletColor("mintcream");
+      jmolApplet([400,500], 'load files "../downloads/4DFR_1346845200.pdb" "../results/poc_reduced_4DFR_1346845200_P0.pdb ""../results/poc_reduced_4DFR_1346845200_P1.pdb ""../results/poc_reduced_4DFR_1346845200_P2.pdb ""../results/poc_reduced_4DFR_1346845200_P3.pdb ""../results/poc_reduced_4DFR_1346845200_P4.pdb ""../results/poc_reduced_4DFR_1346845200_P5.pdb " ; frame *; cpk off; wireframe off;select 1.1; ribbons; color chain; select 2.1; dots on; set dotDensity 6; color atoms lightskyblue; select 3.1; dots on; set dotDensity 6; color atoms indianred; select 4.1; dots on; set dotDensity 6; color atoms lightgreen; select 5.1; dots on; set dotDensity 6; color atoms orange; select 6.1; dots on; set dotDensity 6; color atoms gold; select 7.1; dots on; set dotDensity 6; color atoms violet;') 
+      jmolBr();
+      jmolHtml("Select pocket object to be drawn ");
+      jmolMenu([["frame *; cpk off; wireframe off;select 1.1; ribbons; color chain; select 2.1; dots on; set dotDensity 6; color atoms lightskyblue; select 3.1; dots on; set dotDensity 6; color atoms indianred; select 4.1; dots on; set dotDensity 6; color atoms lightgreen; select 5.1; dots on; set dotDensity 6; color atoms orange; select 6.1; dots on; set dotDensity 6; color atoms gold; select 7.1; dots on; set dotDensity 6; color atoms violet;", "all pockets", "checked"],["frame *; cpk off; wireframe off; select *; dots off; select 2.1; dots on; set dotDensity 6; color atoms lightskyblue", "pocket P0 "],["frame *; cpk off; wireframe off; select *; dots off; select 3.1; dots on; set dotDensity 6; color atoms indianred", "pocket P1 "],["frame *; cpk off; wireframe off; select *; dots off; select 4.1; dots on; set dotDensity 6; color atoms lightgreen", "pocket P2 "],["frame *; cpk off; wireframe off; select *; dots off; select 5.1; dots on; set dotDensity 6; color atoms orange", "pocket P3 "],["frame *; cpk off; wireframe off; select *; dots off; select 6.1; dots on; set dotDensity 6; color atoms gold", "pocket P4 "],["frame *; cpk off; wireframe off; select *; dots off; select 7.1; dots on; set dotDensity 6; color atoms violet", "pocket P5 "]]);
+      jmolBr();
+      jmolButton("reset", "Reset to original orientation");
+      jmolBr();
+      </script>
+      </p>
+<tr><td colspan="2" align="center" ><font size="2"> PDB files, containing the respective pocket atoms, and descriptor information can be sent to you via email. <br> For this purpose, please resubmit your query and enter your email address on the previous page.</td></tr>
+    </td>
+    </tr>
+  <tr>
+  <td colspan="2">
+    <input type="button" value="Start another calculation" onclick="window.location.href='../index.html'">
+  </td>
+  </tr>
+  </table>
+  </td>
+  </tr>
+</table>
+</td>
+</tr>
+</table>
+<div id="footer">
+ <p id="lastchange">DoGSiteScorer: Active Site Prediction and Analysis Server</p><p id="impressum"><a href="http://www.zbh.uni-hamburg.de/en/imprint.html" >Imprint</a></p>
+</div>
+</body>
+</html>

@@ -4,18 +4,39 @@
 </p>
 
 <p> teste den astex-viewer:</p>
+
+<applet archive="OpenAstexViewer.jar"
+        code="MoleculeViewerApplet.class"
+        width="400" height="300">
+<param name="script" value="molecule load mol '3DFR.pdb'; view -wuantialias true;">
+<p> funktioniert nicht? </p>
+</applet>
+
+<!--
 <applet
   width="640" height="480" name="av"
   code="MoleculeViewerApplet"
-  codebase="lib/tasks"
+  codebase="lib/tasks/"
   archive="OpenAstexViewer.jar">
-      <param name="scriptFile" value="621p.script">
+      <param script="molecule load tmp/cache/3DFR.pdb">
+</applet>
+-->
+<!--
+<applet archive="OpenAstexViewer.jar"
+  codebase="/images/"
+  code="MoleculeViewerApplet"
+  width="500" height="350">
+
+  <param name="script" value="molecule load mol '/3DFR.pdb'; view -wuantialias true;">
 </applet>
 
+
+<p>teste anderes applet:</p>
+<applet code="Wuerfel.class" width="400" height="400"></applet>
 <p>
 eventuell brauchen wir noch ein paar mehr parameter...
 </p>
-
+-->
 <%= form_tag("/wait", :method => "get") do %>
   <p>
   select chains
