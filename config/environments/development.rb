@@ -35,6 +35,6 @@ ActionMailer::Base.smtp_settings = {
   :domain => "mail.live.com",
   :authentication => :plain,
   :user_name => "meike-bruns@hotmail.de",
-  :password => "M0ppelK0tze"
+  :password => "..."
 }
 
